@@ -1,11 +1,23 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
   box-sizing: border-box;
   font-size: 62.5%; /* 1rem = 10px, 10px/16px = 62.5% */
+}
+
+.grid-container {
+  display: grid;
+  height: 100vh;
+  grid-template-areas:
+    "header header"
+    "menu main"
+    "footer footer";
+  grid-template-columns: 300px auto;
+  grid-template-rows: 80px auto 80px;
 }
 
 header {
@@ -16,6 +28,7 @@ header {
   font-size: 1.6rem;
   padding: 2rem;
 }
+
 menu {
   grid-area: menu;
   background-color: #e7e7e7;
@@ -39,29 +52,6 @@ footer {
   padding: 2rem;
 }
 
-.grid-container {
-  display: grid;
-  height: 100vh;
-  grid-template-areas:
-    "header header header"
-    "menu main main"
-    "menu main main"
-    "menu main main"
-    "menu main main"
-    "menu main main"
-    "menu main main"
-    "menu main main"
-    "menu main main"
-    "menu main main"
-    "menu main main"
-    "menu main main"
-    "menu main main"
-    "menu main main"
-    "menu main main"
-    "menu main main"
-    "footer footer footer";
-}
-
 .menu {
   display: flex;
   flex-direction: column;
@@ -75,8 +65,7 @@ footer {
 
 .gallery {
   display: grid;
-  /* grid-template-columns: repeat(3, 1fr); */
-  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
   gap: 3rem;
 }
 
